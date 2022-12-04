@@ -25,7 +25,7 @@ class LightGrid:
                 self.lights[x][y] = not self.lights[x][y]
 
     def get_num_lit(self) -> int:
-        return sum(map(lambda line: sum(map(lambda light: 1 if light == True else 0, line)), self.lights))
+        return sum(map(lambda line: sum(map(lambda light: 1 if light else 0, line)), self.lights))
 
 
 class Command:

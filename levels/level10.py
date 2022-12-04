@@ -1,11 +1,8 @@
-from time import time
-
-
-def look_and_say(input: str) -> str:
+def look_and_say(text: str) -> str:
     current = None
     num = 0
     output = ""
-    for character in input:
+    for character in text:
         if character == current:
             num += 1
         else:
@@ -18,7 +15,7 @@ def look_and_say(input: str) -> str:
 
 
 if __name__ == '__main__':
-    text = "3113322113"
+    start = "3113322113"
     for i in range(50):
-        text = look_and_say(text)
-    print(f"Answer: {len(text)}")
+        start = look_and_say(start)
+    print(f"Answer: {len(start)}")
