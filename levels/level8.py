@@ -1,7 +1,7 @@
 from util.file_util import read_input_file
 
 
-def get_value(line: str) -> int:
+def get_value1(line: str) -> int:
     value = 0
     count_next = False
     for character in line:
@@ -18,8 +18,17 @@ def get_value(line: str) -> int:
     return 2 + value
 
 
+def get_value2(line: str) -> int:
+    num_quotes = line.count("\"")
+    num_backslashes = line.count("\\")
+    return 2 + num_quotes + num_backslashes
+
+
 if __name__ == '__main__':
     lines = read_input_file(8, 1)
 
-    answer = sum(map(get_value, lines))
-    print(f"Answer: {answer}")
+    answer1 = sum(map(get_value1, lines))
+    print(f"Answer 1: {answer1}")
+
+    answer2 = sum(map(get_value2, lines))
+    print(f"Answer 2: {answer2}")
