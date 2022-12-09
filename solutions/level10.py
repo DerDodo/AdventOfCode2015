@@ -14,8 +14,15 @@ def look_and_say(text: str) -> str:
     return output
 
 
-if __name__ == '__main__':
+def level10(repetitions: int) -> int:
     start = "3113322113"
-    for i in range(50):
+    for _ in range(repetitions):
         start = look_and_say(start)
-    print(f"Answer: {len(start)}")
+    return len(start)
+
+
+if __name__ == '__main__':
+    _answer40 = level10(40)
+    print(f"Answer: {_answer40}")
+    _answer50 = level10(50)
+    print(f"Answer: {_answer50}")

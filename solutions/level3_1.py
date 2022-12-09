@@ -11,11 +11,10 @@ def deliver(destination_x: int, destination_y: int):
         houses[destination_id] = 1
 
 
-if __name__ == '__main__':
-    description = read_input_file(3, 1)[0]
+def level3_1() -> int:
+    description = read_input_file(3)[0]
 
-    x = 0
-    y = 0
+    x = y = 0
     deliver(x, y)
 
     for character in description:
@@ -29,4 +28,9 @@ if __name__ == '__main__':
             x += 1
         deliver(x, y)
 
-    print(f"Num houses only santa: {len(houses)}")
+    return len(houses)
+
+
+if __name__ == '__main__':
+    _num_houses = level3_1()
+    print(f"Num houses only santa: {_num_houses}")

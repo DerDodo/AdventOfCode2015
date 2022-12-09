@@ -16,6 +16,10 @@ def sum_numbers(text: str) -> int:
     return current_sum
 
 
+def level12_1() -> int:
+    document = read_input_file(12)[0]
+    return sum_numbers(document)
+
+
 if __name__ == '__main__':
-    document = read_input_file(12, 1)[0]
-    print(f"Sum: {sum_numbers(document)}")
+    print(f"Sum: {level12_1()}")

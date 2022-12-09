@@ -11,13 +11,11 @@ def deliver(destination_x: int, destination_y: int):
         houses[destination_id] = 1
 
 
-if __name__ == '__main__':
-    description = read_input_file(3, 1)[0]
+def level3_2() -> int:
+    description = read_input_file(3)[0]
 
-    santa_x = 0
-    santa_y = 0
-    robo_santa_x = 0
-    robo_santa_y = 0
+    santa_x = santa_y = 0
+    robo_santa_x = robo_santa_y = 0
     deliver(santa_x, santa_y)
     deliver(robo_santa_x, robo_santa_y)
     santa_next = True
@@ -49,4 +47,9 @@ if __name__ == '__main__':
             deliver(robo_santa_x, robo_santa_y)
         santa_next = not santa_next
 
-    print(f"Num houses both santa's: {len(houses)}")
+    return len(houses)
+
+
+if __name__ == '__main__':
+    _num_houses = level3_2()
+    print(f"Num houses both santa's: {_num_houses}")

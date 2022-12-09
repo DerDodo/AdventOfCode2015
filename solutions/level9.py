@@ -17,7 +17,7 @@ class Distance:
 
 
 def parse_input_file() -> Tuple[Dict[str, Dict[str, int]], Set[str]]:
-    lines = read_input_file(9, 1)
+    lines = read_input_file(9)
     distances = list(map(Distance, lines))
     distance_map = {}
     location_set: Set[str] = set()
@@ -75,10 +75,15 @@ def find_shortest_route(distances: Dict[str, Dict[str, int]], locations: Set[str
     return min(all_routes, key=attrgetter('distance')).distance
 
 
-if __name__ == '__main__':
+def level9() -> Tuple[int, int]:
     all_distances, all_locations = parse_input_file()
     routes = find_all_routes(all_distances, all_locations)
     shortest_route = min(routes, key=attrgetter('distance')).distance
     longest_route = max(routes, key=attrgetter('distance')).distance
-    print(f"Shortest route: {shortest_route}")
-    print(f"Longest route: {longest_route}")
+    return shortest_route, longest_route
+
+
+if __name__ == '__main__':
+    _shortest_route, _longest_route = level9()
+    print(f"Shortest route: {_shortest_route}")
+    print(f"Longest route: {_longest_route}")

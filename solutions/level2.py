@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 
 from util.file_util import read_input_file
 
@@ -24,15 +24,18 @@ class Box:
 
 
 def parse_input_file() -> List[Box]:
-    lines = read_input_file(2, 1)
+    lines = read_input_file(2)
     return list(map(Box, lines))
 
 
-if __name__ == '__main__':
+def level2() -> Tuple[int, int]:
     boxes = parse_input_file()
-
     needed_paper = sum(map(Box.get_needed_paper, boxes))
-    print(f"Needed paper: {needed_paper}")
-
     needed_ribbon = sum(map(Box.get_needed_ribbon, boxes))
-    print(f"Needed paper: {needed_ribbon}")
+    return needed_paper, needed_ribbon
+
+
+if __name__ == '__main__':
+    _needed_paper, _needed_ribbon = level2()
+    print(f"Needed paper: {_needed_paper}")
+    print(f"Needed paper: {_needed_ribbon}")

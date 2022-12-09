@@ -1,7 +1,7 @@
 from abc import abstractmethod
-from typing import Dict
+from typing import Dict, Tuple
 
-from util.file_util import read_input_file
+from util.file_util import read_input_file_id
 
 
 class CircuitContent:
@@ -14,7 +14,6 @@ class CircuitContent:
         self.wires[wire] = operation
 
     def get_value(self, wire: str) -> int:
-        print("Evaluating " + wire)
         return self.wires[wire].eval(self)
 
 
@@ -166,8 +165,8 @@ class Circuit:
         return self.wires.get_value(wire)
 
 
-def parse_input_file() -> Circuit:
-    lines = read_input_file(7, 2)
+def parse_input_file(file_id: int) -> Circuit:
+    lines = read_input_file_id(7, file_id)
     circuit = Circuit()
     for line in lines:
         parts = line.split(" -> ")
@@ -175,10 +174,17 @@ def parse_input_file() -> Circuit:
     return circuit
 
 
-if __name__ == '__main__':
-    grid = parse_input_file()
+def level7(file_id: int, wire: str) -> int:
+    grid = parse_input_file(file_id)
 
-    result = grid.get_value("a")
+    result = grid.get_value(wire)
     if result < 0:
         result += (1 << 16)
-    print(f"Wire a: {result}")
+    return result
+
+
+if __name__ == '__main__':
+    _result_1 = level7(1, "a")
+    _result_2 = level7(2, "a")
+    print(f"Wire a (1): {_result_1}")
+    print(f"Wire a (2): {_result_2}")

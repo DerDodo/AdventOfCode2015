@@ -61,10 +61,16 @@ def is_correct_password(text: str) -> bool:
     return has_three_following and len(pairs) >= 2
 
 
-if __name__ == '__main__':
-    password = "vzbxxyzz"
+def level11(password: str) -> str:
     password = clean_password(password)
     password = increment(password)
     while not is_correct_password(password):
         password = increment(password)
-    print(f"New password: {password}")
+    return password
+
+
+if __name__ == '__main__':
+    _password = level11("vzbxkghb")
+    print(f"New password: {_password}")
+    _password = level11(_password)
+    print(f"New new password: {_password}")

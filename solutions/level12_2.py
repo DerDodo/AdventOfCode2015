@@ -35,6 +35,10 @@ def sum_numbers(document) -> int:
     return current_sum
 
 
+def level12_2() -> int:
+    json_document = json.loads(read_input_file(12)[0])
+    return sum_numbers(json_document)
+
+
 if __name__ == '__main__':
-    json_document = json.loads(read_input_file(12, 1)[0])
-    print(f"Sum: {sum_numbers(json_document)}")
+    print(f"Sum: {level12_2()}")

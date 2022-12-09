@@ -1,3 +1,5 @@
+from typing import Tuple
+
 from util.file_util import read_input_file
 
 
@@ -24,11 +26,14 @@ def get_value2(line: str) -> int:
     return 2 + num_quotes + num_backslashes
 
 
-if __name__ == '__main__':
-    lines = read_input_file(8, 1)
-
+def level8() -> Tuple[int, int]:
+    lines = read_input_file(8)
     answer1 = sum(map(get_value1, lines))
-    print(f"Answer 1: {answer1}")
-
     answer2 = sum(map(get_value2, lines))
-    print(f"Answer 2: {answer2}")
+    return answer1, answer2
+
+
+if __name__ == '__main__':
+    _answer1, _answer2 = level8()
+    print(f"Answer 1: {_answer1}")
+    print(f"Answer 2: {_answer2}")

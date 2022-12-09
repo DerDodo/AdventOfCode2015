@@ -4,28 +4,28 @@ from util.file_util import read_input_file
 
 
 class LightGrid:
-    lights: List[List[bool]]  # x,y
+    lights: List[List[int]]  # x,y
 
     def __init__(self):
-        self.lights = [[False] * 1000 for i in range(1000)]
+        self.lights = [[False] * 1000 for _ in range(1000)]
 
     def turn_on(self, start_x: int, start_y: int, end_x: int, end_y: int):
         for x in range(start_x, end_x + 1):
             for y in range(start_y, end_y + 1):
-                self.lights[x][y] = True
+                self.lights[x][y] += 1
 
     def turn_off(self, start_x: int, start_y: int, end_x: int, end_y: int):
         for x in range(start_x, end_x + 1):
             for y in range(start_y, end_y + 1):
-                self.lights[x][y] = False
+                self.lights[x][y] = max(self.lights[x][y] - 1, 0)
 
     def toggle(self, start_x: int, start_y: int, end_x: int, end_y: int):
         for x in range(start_x, end_x + 1):
             for y in range(start_y, end_y + 1):
-                self.lights[x][y] = not self.lights[x][y]
+                self.lights[x][y] += 2
 
     def get_num_lit(self) -> int:
-        return sum(map(lambda line: sum(map(lambda light: 1 if light else 0, line)), self.lights))
+        return sum(map(lambda line: sum(line), self.lights))
 
 
 class Command:
@@ -61,15 +61,20 @@ class Command:
 
 
 def parse_input_file() -> List[Command]:
-    lines = read_input_file(6, 1)
+    lines = read_input_file(6)
     return list(map(Command, lines))
 
 
-if __name__ == '__main__':
+def level6_2() -> int:
     grid = LightGrid()
     commands = parse_input_file()
 
     for command in commands:
         command.execute(grid)
 
-    print(f"Num lit lights: {grid.get_num_lit()}")
+    return grid.get_num_lit()
+
+
+if __name__ == '__main__':
+    _num_lit = level6_2()
+    print(f"Num lit lights: {_num_lit}")
