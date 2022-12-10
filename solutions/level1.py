@@ -9,8 +9,7 @@ def level1() -> Tuple[int, int]:
     count_closing = description.count(")")
     final_floor = count_opening - count_closing
 
-    current_floor = 0
-    i = 0
+    current_floor = i = 0
     for character in description:
         i += 1
         if character == "(":
@@ -20,6 +19,7 @@ def level1() -> Tuple[int, int]:
 
         if current_floor == -1:
             return final_floor, i
+
     raise ValueError("Didn't enter basement!")
 
 

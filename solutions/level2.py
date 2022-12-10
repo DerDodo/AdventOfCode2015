@@ -10,7 +10,7 @@ class Box:
 
     def __init__(self, description: str):
         parts = description.split("x")
-        [self.w, self.h, self.l] = [eval(part) for part in parts]
+        [self.w, self.h, self.l] = [int(part) for part in parts]
 
     def get_needed_paper(self):
         return (2 * self.w * self.h +

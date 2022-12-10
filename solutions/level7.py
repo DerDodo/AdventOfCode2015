@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from typing import Dict, Tuple
+from typing import Dict
 
 from util.file_util import read_input_file_id
 
