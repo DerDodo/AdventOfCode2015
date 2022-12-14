@@ -23,6 +23,6 @@ def level3_2(description: str) -> int:
     return len(houses)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _num_houses = level3_2(read_input_file(3)[0])
     print(f"Num houses both santa's: {_num_houses}")

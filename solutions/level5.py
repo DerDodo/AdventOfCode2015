@@ -58,7 +58,7 @@ def level5() -> Tuple[int, int]:
     return num_nice1, num_nice2
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _num_nice1, _num_nice2 = level5()
     print(f"Num nice1 lines: {_num_nice1}")
     print(f"Num nice2 lines: {_num_nice2}")

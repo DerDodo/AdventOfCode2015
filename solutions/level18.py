@@ -12,7 +12,7 @@ class LightGrid:
         self.broken_corners = broken_corners
 
         for line in lines:
-            light_line = list(map(lambda c: False if c == '.' else True, line))
+            light_line = list(map(lambda c: False if c == "." else True, line))
             self.lights.append(light_line)
 
         if broken_corners:
@@ -49,9 +49,12 @@ class LightGrid:
             check_y = y + y_plus
             for x_plus in [-1, 0, 1]:
                 check_x = x + x_plus
-                if (0 <= check_x < len(self.lights[0]) and
-                        0 <= check_y < len(self.lights) and
-                        self.lights[check_y][check_x] and (y_plus != 0 or x_plus != 0)):
+                if (
+                    0 <= check_x < len(self.lights[0])
+                    and 0 <= check_y < len(self.lights)
+                    and self.lights[check_y][check_x]
+                    and (y_plus != 0 or x_plus != 0)
+                ):
                     num_neighbors_on += 1
         return num_neighbors_on
 
@@ -75,7 +78,7 @@ def level18(num_steps: int, broken_corners: bool) -> int:
     return light_grid.get_num_lit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _num_lit = level18(100, False)
     print(f"Num lit (1): {_num_lit}")
     _num_lit = level18(100, True)

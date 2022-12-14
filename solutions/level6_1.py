@@ -75,6 +75,6 @@ def level6_1() -> int:
     return grid.get_num_lit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _num_lit = level6_1()
     print(f"Num lit lights: {_num_lit}")

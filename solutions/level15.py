@@ -80,7 +80,7 @@ def level15() -> Tuple[int, int]:
     return max(scores), max(filtered_scores)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _score_1, _score_2 = level15()
     print(f"Score: (1) {_score_1}")
     print(f"Score: (2) {_score_2}")

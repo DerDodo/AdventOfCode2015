@@ -27,7 +27,7 @@ def find_all_fill_options(containers: List[Container], remaining_volume: int) ->
         if item.volume == remaining_volume:
             permutations.append([item])
         elif item.volume < remaining_volume:
-            remaining_list = containers[i + 1:]
+            remaining_list = containers[i + 1 :]
             for permutation in find_all_fill_options(remaining_list, remaining_volume - item.volume):
                 permutations.append([item] + permutation)
     return permutations
@@ -41,7 +41,7 @@ def level17(volume: int) -> Tuple[int, int]:
     return len(filled_containers), num_options_with_min_containers
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _num_combinations, _num_options_with_min_containers = level17(150)
     print(f"Num combinations (1): {_num_combinations}")
     print(f"Num combinations (2): {_num_options_with_min_containers}")

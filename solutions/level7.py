@@ -179,11 +179,11 @@ def level7(file_id: int, wire: str) -> int:
 
     result = grid.get_value(wire)
     if result < 0:
-        result += (1 << 16)
+        result += 1 << 16
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _result_1 = level7(1, "a")
     _result_2 = level7(2, "a")
     print(f"Wire a (1): {_result_1}")

@@ -72,18 +72,18 @@ def find_all_routes(distances: Dict[str, Dict[str, int]], locations: Set[str]) -
 
 def find_shortest_route(distances: Dict[str, Dict[str, int]], locations: Set[str]) -> int:
     all_routes = find_all_routes(distances, locations)
-    return min(all_routes, key=attrgetter('distance')).distance
+    return min(all_routes, key=attrgetter("distance")).distance
 
 
 def level9() -> Tuple[int, int]:
     all_distances, all_locations = parse_input_file()
     routes = find_all_routes(all_distances, all_locations)
-    shortest_route = min(routes, key=attrgetter('distance')).distance
-    longest_route = max(routes, key=attrgetter('distance')).distance
+    shortest_route = min(routes, key=attrgetter("distance")).distance
+    longest_route = max(routes, key=attrgetter("distance")).distance
     return shortest_route, longest_route
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _shortest_route, _longest_route = level9()
     print(f"Shortest route: {_shortest_route}")
     print(f"Longest route: {_longest_route}")

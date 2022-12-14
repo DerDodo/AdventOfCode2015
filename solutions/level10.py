@@ -21,7 +21,7 @@ def level10(repetitions: int) -> int:
     return len(start)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _answer40 = level10(40)
     print(f"Answer: {_answer40}")
     _answer50 = level10(50)

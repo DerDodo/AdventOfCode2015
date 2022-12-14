@@ -62,7 +62,7 @@ def generate_all_permutations(persons: List[str]) -> List[List[str]]:
     permutations = []
     for i in range(len(persons)):
         start = persons[i]
-        remaining_list = persons[:i] + persons[i+1:]
+        remaining_list = persons[:i] + persons[i + 1 :]
         for permutation in generate_all_permutations(remaining_list):
             permutations.append([start] + permutation)
     return permutations
@@ -74,6 +74,6 @@ def level13(include_me: bool) -> int:
     return max(map(lambda p: happiness_evaluator.evaluate(p), all_permutations))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(f"Max happiness (without me): {level13(False)}")
     print(f"Max happiness (with me): {level13(True)}")

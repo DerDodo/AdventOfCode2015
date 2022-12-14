@@ -8,7 +8,7 @@ def get_value1(line: str) -> int:
     count_next = False
     for character in line:
         if count_next:
-            if character == "\"" or character == "\\":
+            if character == '"' or character == "\\":
                 value += 1
             elif character == "x":
                 value += 3
@@ -21,7 +21,7 @@ def get_value1(line: str) -> int:
 
 
 def get_value2(line: str) -> int:
-    num_quotes = line.count("\"")
+    num_quotes = line.count('"')
     num_backslashes = line.count("\\")
     return 2 + num_quotes + num_backslashes
 
@@ -33,7 +33,7 @@ def level8() -> Tuple[int, int]:
     return answer1, answer2
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _answer1, _answer2 = level8()
     print(f"Answer 1: {_answer1}")
     print(f"Answer 2: {_answer2}")

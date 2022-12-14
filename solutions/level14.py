@@ -61,6 +61,6 @@ def level14_2(duration: int) -> int:
     return max(map(lambda _r: _r.points, reindeer))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(f"Winning distance: {level14_1(2503)}")
     print(f"Winning points: {level14_2(2503)}")

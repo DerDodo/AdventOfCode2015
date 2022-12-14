@@ -23,7 +23,7 @@ def level1() -> Tuple[int, int]:
     raise ValueError("Didn't enter basement!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _final_floor, _entering_basement = level1()
     print(f"Final floor: {_final_floor}")
     print(f"Entering basement at: {_entering_basement}")

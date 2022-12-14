@@ -25,13 +25,13 @@ def increment(text: str) -> str:
     while increment_next and increment_i > 0:
         character = text[increment_i]
         if character == "z":
-            text = text[0:increment_i] + "a" + text[(increment_i+1):]
+            text = text[0:increment_i] + "a" + text[(increment_i + 1) :]
             increment_i -= 1
         else:
             new_character = chr(ord(character) + 1)
             if new_character == "i" or new_character == "o" or new_character == "l":
                 chr(ord(character) + 1)
-            text = text[0:increment_i] + new_character + text[(increment_i+1):]
+            text = text[0:increment_i] + new_character + text[(increment_i + 1) :]
             increment_next = False
     return text
 
@@ -47,9 +47,13 @@ def is_correct_password(text: str) -> bool:
         if character == "i" or character == "o" or character == "l":
             return False
 
-        if (not has_three_following and last_character is not None and before_last_character is not None
-                and ord(character) - ord(last_character) == 1
-                and ord(last_character) - ord(before_last_character) == 1):
+        if (
+            not has_three_following
+            and last_character is not None
+            and before_last_character is not None
+            and ord(character) - ord(last_character) == 1
+            and ord(last_character) - ord(before_last_character) == 1
+        ):
             has_three_following = True
 
         if character == last_character:
@@ -69,7 +73,7 @@ def level11(password: str) -> str:
     return password
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _password = level11("vzbxkghb")
     print(f"New password: {_password}")
     _password = level11(_password)

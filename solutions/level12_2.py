@@ -40,5 +40,5 @@ def level12_2() -> int:
     return sum_numbers(json_document)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(f"Sum: {level12_2()}")

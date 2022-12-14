@@ -21,5 +21,5 @@ def level12_1() -> int:
     return sum_numbers(document)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(f"Sum: {level12_1()}")
