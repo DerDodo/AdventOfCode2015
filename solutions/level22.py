@@ -307,8 +307,6 @@ def level22(player_hp: int, player_mana: int, simulation_scale: int, hard_mode: 
         )
         min_mana = min(min_mana, new_min_mana)
         min_boss_hp = min(min_boss_hp, new_min_boss_hp)
-        global died_by_hard_mode, died_by_out_of_mana, died_by_enemy_hit
-        died_by_hard_mode, died_by_out_of_mana, died_by_enemy_hit = 0, 0, 0
 
     return min_mana
 
